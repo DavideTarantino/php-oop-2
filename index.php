@@ -13,4 +13,12 @@
             $this->category = $_category;
             $this->title = $_title;
         }
+
+        public function getPrice(){
+            return $this->price;
+        }
+
+        public function setPrice($price){
+            $this-> = $price;
+        }
     }
