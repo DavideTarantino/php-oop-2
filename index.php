@@ -19,7 +19,7 @@
         }
 
         public function setPrice($price){
-            $this-> = $price;
+            $this->price = $price;
         }
     }
 
@@ -28,3 +28,42 @@
     $thirdProduct = new Product('./img/filtro per acquario.jpg', "Cura dell'acquario", 22.50, 'Acquariologia', 'Filtro per Acquario');
 
     ?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>BoolPlanet</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>
+                    BoolPlanet
+                </h1>
+                <h4>
+                    Are you a good friend for your pet? Weel, this is your ideal place.  
+                </h4>
+            </div>
+        </header>
+        <main>
+            <div id='main-container'>
+                <?php foreach([$firstProduct, $secondProduct, $thirdProduct] as $element): ?>
+                <div id="card-container">
+                    <div id='card'>
+                        <img src="<?php echo $element->image; ?>" alt="img">
+                        <div>
+                            <h3><?php echo $element->title; ?></h3>
+                            <p>Tipo: <?php echo $element->type; ?></p>
+                            <p>Categoria: <?php echo $element->category; ?></p>
+                            <p>Prezzo: <?php echo $element->getPrice(); ?> $</p>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </main>
+    </body>
+    </html>
