@@ -15,3 +15,24 @@ header div{
     font-family: sans-serif;
     line-height: 35px;
 }
+
+#main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+h3 ,p{
+    background-color: white;
+}
+
+#single-card{
+    background-color: white;
+
+}
+
+img{
+    width: 300px;
+    background-color: white;
+}

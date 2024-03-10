@@ -52,14 +52,12 @@
             <div id='main-container'>
                 <?php foreach([$firstProduct, $secondProduct, $thirdProduct] as $element): ?>
                 <div id="card-container">
-                    <div id='card'>
+                    <div id="single-card">
                         <img src="<?php echo $element->image; ?>" alt="img">
-                        <div>
-                            <h3><?php echo $element->title; ?></h3>
-                            <p>Tipo: <?php echo $element->type; ?></p>
-                            <p>Categoria: <?php echo $element->category; ?></p>
-                            <p>Prezzo: <?php echo $element->getPrice(); ?> $</p>
-                        </div>
+                        <h3><?php echo $element->title; ?></h3>
+                        <p>Tipo: <?php echo $element->type; ?></p>
+                        <p>Categoria: <?php echo $element->category; ?></p>
+                        <p>Prezzo: <?php echo $element->getPrice(); ?> $</p>
                     </div>
                 </div>
                 <?php endforeach; ?>
