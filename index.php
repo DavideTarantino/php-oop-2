@@ -4,5 +4,13 @@
         public $type;
         private $price;
         public $category;
-        public $type;
+        public $title;
+
+        public function __construct($_image, $_type, $_price, $_category, $_title){
+            $this->image = $_image;
+            $this->type = $_type;
+            $this->price = $_price;
+            $this->category = $_category;
+            $this->title = $_title;
+        }
     }
