@@ -2,9 +2,9 @@
     include_once __DIR__ .'/Models/Products.php';
     include_once __DIR__ .'/Models/Discounted.php';
 
-    $firstProduct = new Discounted('./Assets/img/crocchette per gatti.webp', 'Cibo', 12.50, 'Gatti', 'Crocchette per Gatti', 'No');
-    $secondProduct = new Discounted('./Assets/img/osso di gomma.jpg', 'Giocattoli', 7, 'Cani', 'Osso di Gomma', 'No');
-    $thirdProduct = new Discounted('./Assets/img/filtro per acquario.jpg', "Cura dell'acquario", 22.50, 'Acquariologia', 'Filtro per Acquario', 'Si')
+    $firstProduct = new Discounted('./Assets/img/crocchette per gatti.webp', 'Cibo', 12.50, 'Gatti', 'Crocchette per Gatti', false);
+    $secondProduct = new Discounted('./Assets/img/osso di gomma.jpg', 'Giocattoli', 7, 'Cani', 'Osso di Gomma', false);
+    $thirdProduct = new Discounted('./Assets/img/filtro per acquario.jpg', "Cura dell'acquario", 22.50, 'Acquariologia', 'Filtro per Acquario', true)
 
     ?>
 
@@ -37,7 +37,8 @@
                         <p>Tipo: <?php echo $element->type; ?></p>
                         <p>Categoria: <?php echo $element->category; ?></p>
                         <p>Prezzo: <?php echo $element->getPrice(); ?> $</p>
-                        <p>Scontato: <?php echo $element->discount; ?></p>
+                        <p>Scontato: <?php echo ($element->discount == true)? 'si' : 'no'; ?></p>
+                        <p>Percentuale di sconto: <?php echo ($element->discount == true)? $element->dscpercent() : '0%'; ?></p>
                     </div>
                 </div>
                 <?php endforeach; ?>
