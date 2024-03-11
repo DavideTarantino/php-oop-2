@@ -1,31 +1,9 @@
 <?php 
-    class Product{
-        public $image;
-        public $type;
-        private $price;
-        public $category;
-        public $title;
+    include_once __DIR__ .'/Models/Products.php';
 
-        public function __construct($_image, $_type, $_price, $_category, $_title){
-            $this->image = $_image;
-            $this->type = $_type;
-            $this->price = $_price;
-            $this->category = $_category;
-            $this->title = $_title;
-        }
-
-        public function getPrice(){
-            return $this->price;
-        }
-
-        public function setPrice($price){
-            $this->price = $price;
-        }
-    }
-
-    $firstProduct = new Product('./img/crocchette per gatti.webp', 'Cibo', 12.50, 'Gatti', 'Crocchette per Gatti');
-    $secondProduct = new Product('./img/osso di gomma.jpg', 'Giocattoli', 7, 'Cani', 'Osso di Gomma');
-    $thirdProduct = new Product('./img/filtro per acquario.jpg', "Cura dell'acquario", 22.50, 'Acquariologia', 'Filtro per Acquario');
+    $firstProduct = new Product('./Assets/img/crocchette per gatti.webp', 'Cibo', 12.50, 'Gatti', 'Crocchette per Gatti');
+    $secondProduct = new Product('./Assets/img/osso di gomma.jpg', 'Giocattoli', 7, 'Cani', 'Osso di Gomma');
+    $thirdProduct = new Product('./Assets/img/filtro per acquario.jpg', "Cura dell'acquario", 22.50, 'Acquariologia', 'Filtro per Acquario');
 
     ?>
 
@@ -34,7 +12,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./Assets/style.css">
         <title>BoolPlanet</title>
     </head>
     <body>
