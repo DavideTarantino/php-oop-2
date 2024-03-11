@@ -1,9 +1,10 @@
 <?php 
     include_once __DIR__ .'/Models/Products.php';
+    include_once __DIR__ .'/Models/Discounted.php';
 
-    $firstProduct = new Product('./Assets/img/crocchette per gatti.webp', 'Cibo', 12.50, 'Gatti', 'Crocchette per Gatti');
-    $secondProduct = new Product('./Assets/img/osso di gomma.jpg', 'Giocattoli', 7, 'Cani', 'Osso di Gomma');
-    $thirdProduct = new Product('./Assets/img/filtro per acquario.jpg', "Cura dell'acquario", 22.50, 'Acquariologia', 'Filtro per Acquario');
+    $firstProduct = new Discounted('./Assets/img/crocchette per gatti.webp', 'Cibo', 12.50, 'Gatti', 'Crocchette per Gatti', 'No');
+    $secondProduct = new Discounted('./Assets/img/osso di gomma.jpg', 'Giocattoli', 7, 'Cani', 'Osso di Gomma', 'No');
+    $thirdProduct = new Discounted('./Assets/img/filtro per acquario.jpg', "Cura dell'acquario", 22.50, 'Acquariologia', 'Filtro per Acquario', 'Si')
 
     ?>
 
@@ -36,6 +37,7 @@
                         <p>Tipo: <?php echo $element->type; ?></p>
                         <p>Categoria: <?php echo $element->category; ?></p>
                         <p>Prezzo: <?php echo $element->getPrice(); ?> $</p>
+                        <p>Scontato: <?php echo $element->discount; ?></p>
                     </div>
                 </div>
                 <?php endforeach; ?>
